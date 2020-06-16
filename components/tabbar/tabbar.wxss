@@ -1,0 +1,59 @@
+
+/*底部*/
+
+.menu-item{
+    width: 50%;
+    float: left;
+    text-align: center;
+    /*padding-top:6rpx;*/
+    padding-top:1rpx;
+    padding-bottom:1rpx;
+    position: relative;
+}
+
+.img{
+    width: 55rpx;
+    height:55rpx;
+    display: block;
+    margin:auto;
+}
+.clear{
+    clear: both;
+}
+.tab-bar{
+    position: fixed;
+    width: 100%;
+    padding: 0px 2%;
+    box-sizing: border-box;
+    z-index: 2;
+}
+.tabbar_text{
+    font-size: 22rpx;
+    margin-bottom: 6rpx;
+    display: block;
+}
+.menu-item .rzbtn{
+    right: 0;
+    top: 6rpx;
+}
+.xtab-bar{
+    display: block;
+    padding-top:5rpx;
+}
+
+.btn-sm{
+    width:164rpx;
+    height:30rpx;
+    line-height:30rpx;
+    border:1px solid #a6c6f8;
+    border-radius:15rpx;
+    background-color:rgba(181,204,243,1);
+    font-size:16rpx;
+    font-family:FZLanTingHeiS-EL-GB;
+    font-weight:400;
+    text-align: center;
+    vertical-align:middle;
+    display: inline-block;
+    position: absolute;
+    color: #3f80ea;
+}

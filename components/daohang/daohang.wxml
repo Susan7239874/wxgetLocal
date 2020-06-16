@@ -1,0 +1,17 @@
+<!--自定义导航栏 -s-->
+<view class="custom_nav" style="height:{{navbarHeight+3}}px;">
+  <view class="custom_nav_box" style="height:{{navbarHeight}}px;">
+    <view class="custom_nav_bar" style="top:{{statusBarHeight+1}}px; height:{{cusnavH}}px;">
+      <view class="custom_nav_icon"  wx:if="{{!navbarData.has_search}}" style="height:{{navbarBtn.height - 2}}px; top:{{navbarBtn.top}}px; left:{{navbarBtn.right}}px; border-radius: {{navbarBtn.height / 2}}px">
+        <navigator open-type="navigateBack" delta="1" hover-class="none">
+          <view class="gobank" style="height:{{navbarBtn.height - 10}}px;width:{{navbarBtn.height - 10}}px;"></view>
+        </navigator>
+        <navigator open-type="switchTab" url="/pages/home/home" hover-class="none">
+          <view class="home" style="height:{{navbarBtn.height -10 }}px;width:{{navbarBtn.height - 10}}px;"></view>
+        </navigator>
+      </view>
+      <view class="nav_title" wx:if="{{!navbarData.has_search}}" style="height:{{cusnavH}}px; line-height:{{cusnavH}}px;">{{title}}</view>
+    </view>
+  </view>
+</view>
+<!--自定义导航栏 -e-->

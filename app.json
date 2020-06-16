@@ -1,0 +1,22 @@
+{
+  "pages": [
+    "pages/paydeposit/paydeposit"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "比亚迪",
+    "navigationBarTextStyle": "black"
+  },
+
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "navigateToMiniProgramAppIdList": [
+    "wxa28c31d4ff7ae869"
+  ]
+}

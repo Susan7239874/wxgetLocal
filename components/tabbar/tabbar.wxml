@@ -1,0 +1,15 @@
+<!--<template name="tabBar">-->
+    <view class="tab-bar flex flex-vc {{tabBar.tabHeight==85?'xtab-bar':''}}" style="height:{{tabBar.tabHeight}}px;color: {{tabBar.color}}; background-color: {{tabBar.backgroundColor}}; {{tabBar.position=='top'? 'top: 0' : 'bottom: 0'}}; {{tabBar.borderStyle? (tabBar.position=='top'? 'border-bottom: solid 1px '+tabBar.borderStyle + ';' : 'border-top: solid 1px '+tabBar.borderStyle + ';') : ''}}">
+        <block wx:for="{{tabBar.list}}" wx:key="pagePath" wx:for-item="item">
+<!--            <navigator url="{{item.pagePath}}" hover-class="none" open-type="switchTab" class="{{item.clas}}" style="{{item.active? 'color: '+(item.selectedColor? item.selectedColor : tabBar.selectedColor) : ''}}">-->
+            <view data-url="{{item.pagePath}}"  bindtap="goPageTabbar" class="{{item.clas}}" style="{{item.active? 'color: '+(item.selectedColor? item.selectedColor : tabBar.selectedColor) : ''}}">
+                <image src="{{item.selectedIconPath}}" wx:if="{{item.active}}" class="img"></image>
+                <image src="{{item.iconPath}}" wx:if="{{!item.active}}" class="img"></image>
+                <view class="btn-sm rzbtn" wx:if="{{item.text=='用户中心'&&tabBar.paoYn}}">车主认证已开启</view>
+                <text class='tabbar_text'>{{item.text}}</text>
+<!--            </navigator>-->
+            </view>
+        </block>
+        <view class="clear"></view>
+    </view>
+<!--</template>-->

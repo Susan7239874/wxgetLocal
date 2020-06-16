@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "daohang": "/components/daohang/daohang"
+  },
+  "navigationBarBackgroundColor": "#FFFFFF",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "支付线上意向金",
+  "backgroundTextStyle": "light",
+  "navigationStyle": "default"}

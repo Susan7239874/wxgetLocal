@@ -1,0 +1,26 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: 'FZLanTingHeiS-EL-GB';
+  src: url('http://img.intech.gdinsight.com/byd/a20200403han/FZLanTingHeiS-EL-GB.ttf');
+}
+.blueBtn{
+  width:602rpx;
+  height:85rpx;
+  line-height: 85rpx;
+  background:#568be2;
+  border-radius:43rpx;
+  font-size:28rpx;
+  font-family:FZLanTingHeiS-EL-GB;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+  text-align: center;
+  margin:auto;
+}

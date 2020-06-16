@@ -1,0 +1,111 @@
+<!--pages/paydeposit/paydeposit.wxml-->
+
+<view class="container">
+    <!--    支付信息-->
+    <view class="allpart allpart1">
+        <view class="card-bg">
+            <view class="card">
+                <view class="small-title">个人信息</view>
+                <view class="section-card">
+                    <view class="section">
+                        <view class="lable-select">
+                            <text wx:if="{{sellername || !isshouquan}}" bindtap="dialogChange">{{sellername== "" ? "经销商":sellername}}</text>
+                            <view class="form-btn" wx:if="{{!sellername && isshouquan}}">
+                                <button  bindtap="getLocal" style="width: 602rpx;">经销商</button>
+                            </view>
+                            <image class="direction-carImg" src="{{directionImg}}"></image>
+                        </view>
+                    </view>
+                    <view class="text-t">为了给您更好的体验，请选择省内就近城市的4S店</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<!--经销商弹窗-->
+<view class="containerWrap" wx:if="{{dialogYn}}" >
+    <view class="carImg"  catchtap="dialogChange2" catchtouchmove="true"></view>
+<!--    <view class="searchBox">--><!--        <image class="searchIcon" src="{{searchIcon}}" mode="scaleToFill"></image>--><!--        <input  type="text"--><!--                value="{{serchContent}}"--><!--                bindinput="bindKeyInput"--><!--                placeholder="输入关键词"--><!--                maxlength="23"--><!--                placeholder-class="palcecolor"--><!--        />--><!--    </view>-->
+    <view  class="part part1">
+        <view class="choosetitle flex flex-vc flex-hbet">
+           <view class="addresswrap flex flex-h">
+               <image class="addressIcon" src="{{addressIcon}}" mode="scaleToFill"></image>
+               <view class="choosebtns"><text catchtap="setPartToSheng">{{area[area1].name}} </text><text>/</text><text catchtap="setPartToCity">{{area2 >=0 ? area[area1].children[area2].name:"其他"}}</text><image src="{{arrowIcon}}" mode="scaleToFill"></image></view>
+           </view>
+            <image class="closeIcon" src="{{closeIcon}}" mode="scaleToFill" catchtap="dialogChange2"></image>
+        </view>
+        <view class="chooseWrap1 chooseWrap" wx:if="{{status==1}}">
+            <image class="chooseStoreIcon" src="{{chooseStoreIcon}}" mode="scaleToFill"></image>
+            <view class="nostroetip">
+                该城市目前暂无汉车型授权经销商，您可选择<text>省内就近城市</text>的经销商为您提供服务。
+            </view>
+        </view>
+        <view class="chooseWrap2 chooseWrap" wx:if="{{status==2}}">
+            <view class="boxsWrap">
+                <view class="box {{area1==indexsheng?'active':''}}"
+                      wx:for="{{area}}"
+                      wx:for-item="itemsheng"
+                      wx:for-index="indexsheng"
+                      data-index="{{indexsheng}}"
+                      bindtap="areato1"
+                      wx:key="index">
+                    {{itemsheng.shortname}}
+                </view>
+            </view>
+        </view>
+        <view class="chooseWrap3 chooseWrap" wx:if="{{status==3}}">
+            <view class="boxsWrap">
+                <view class="box {{area2==indexcity?'active':''}}"
+                      wx:for="{{area[area1].children}}"
+                      wx:for-item="itemcity"
+                      wx:for-index="indexcity"
+                      data-index="{{indexcity}}"
+                      bindtap="areato2"
+                      wx:key="index">
+                    {{itemcity.shortname != " " ? itemcity.shortname : itemcity.name}}
+                </view>
+                <view class="box {{area2==-1?'active':''}}"
+                      data-index="-1"
+                      bindtap="areato2">
+                    其他
+                </view>
+            </view>
+        </view>
+        <view class="chooseWrap4 chooseWrap" wx:if="{{status==4}}">
+            <view class="sellerlist">
+                <view class="seller {{seller==indexseller?'selleractive':''}}"
+                      wx:for="{{sellerlist}}"
+                      wx:for-item="itemseller"
+                      wx:for-index="indexseller"
+                      data-index="{{indexseller}}"
+                      bindtap="sellerClick"
+                      wx:key="index">
+                    <view class="name">{{itemseller.name}}</view>
+                    <view class="address">{{itemseller.address}}</view>
+                </view>
+            </view>
+            <view class="blueBtn" bindtap="sureStore">确认门店</view>
+        </view>
+    </view>
+</view>
+<!--底部选择器2-->
+<view class="containerWrap" wx:if="{{dialogYn2}}" catchtouchmove="true">
+<view class="pickwrap">
+    <image class="closeIcon" src="{{closeIcon}}" mode="scaleToFill" catchtap="pickerClose"></image>
+    <picker-view indicator-style="height:42px;" style="width:345px;margin:auto;height: 150px;margin-top:10px;" value="{{sexindex}}" bindchange="bindPickerChangeSex">
+        <picker-view-column style="width: 345px;height:150px;">
+            <view wx:for="{{sexarray}}" style="line-height:42px;text-align: center;" wx:key="index">{{item}}</view>
+        </picker-view-column>
+    </picker-view>
+    <view class="blueBtn" catchtap="sureSexIndex">确定</view>
+</view>
+</view>
+
+
+
+
+
+
+
+
+
